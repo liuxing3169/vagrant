@@ -1,6 +1,6 @@
 ---
 layout: "intro"
-page_title: "Share - Getting Started"
+page_title: "分析 - 开始使用"
 sidebar_current: "gettingstarted-share"
 description: |-
   Now that we have a web server up and running and accessible from your machine,
@@ -10,20 +10,14 @@ description: |-
   Vagrant is called Vagrant Share.
 ---
 
-# Share
+# 分享
 
-Now that we have a web server up and running and accessible from your machine,
-we have a fairly functional development environment. But in addition to
-providing a development environment, Vagrant also makes it easy to share
-and collaborate on these environments. The primary feature to do this in
-Vagrant is called [Vagrant Share](/docs/share/).
+现在我们有了一个Web服务器已经启动并运行着，可以从你的电脑访问这个站点，还有一个我们非常熟悉的开发环境。
+但除了提供开发环境外，Vagrant还让分享和贡献这些环境非常简单。在Vagrant中做这件事的主要功能叫做[Vagrant分享](/docs/share/)。
 
-Vagrant Share lets you share your Vagrant environment to anyone around the
-world with an Internet connection. It will give you a URL that will route
-directly to your Vagrant environment from any device in the world that is
-connected to the Internet.
+Vagrant分享功能让你可以通过互联网分享你的Vagrant环境给世界上的任何人。它将为您提供一个URL，该网址将直接从连接到互联网的世界上的任何设备路由到您的Vagrant环境。
 
-Run `vagrant share`:
+运行 `vagrant share`:
 
 ```
 $ vagrant share
@@ -33,25 +27,16 @@ $ vagrant share
 ...
 ```
 
-Your URL will be different, so do not try the URL above. Instead, copy
-the URL that `vagrant share` outputted for you and visit that in a web
-browser. It should load the Apache page we setup earlier.
+你的URL将会不一样，所以不要尝试上面的URL。而是复制`vagrant share`输出的URL，并在Web浏览器中访问这个地址。它将加载我们早前建立起的Apache页面。
 
-If you modify the files in your shared folder and refresh the URL, you will
-see it update! The URL is routing directly into your Vagrant environment,
-and works from any device in the world that is connected to the internet.
+如果你在你的共享文件夹中修改文件并刷新URL，你将会看到它会更新！这个URL是定向到你的Vagrant环境的路由，并可以通过internet网络从世界上的任何设备上进行访问。
 
-To end the sharing session, hit `Ctrl+C` in your terminal. You can refresh
-the URL again to verify that your environment is no longer being shared.
+要结束分享回话，在终端中输入`Ctrl+C` 。你再一次可以刷新URL以验证你的环境不再被分享中。
 
-Vagrant Share is much more powerful than simply HTTP sharing. For more
-details, see the [complete Vagrant Share documentation](/docs/share/).
+Vagrant分享比简单的HTTP分享要强大的多。了解更多细节，请看[完整的Vagrant分享文档](/docs/share/)。
 
-~> **Vagrant share is not designed to serve production traffic!** Please do not
-rely on Vagrant share outside of development or Q/A. The Vagrant share service
-is not designed to carry production-level traffic.
+~> **Vagrant分享不是为生产场景所设计！** 请不要在开发环境之外依赖Vagrant分享或者问答。Vagrant分享不是为承载生产级别的流量所设计的。
 
-## Next Steps
+## 下一步
 
-You have successfully shared your environment with the world. Congratulations!
-Read on to learn about the [teardown process](/intro/getting-started/teardown.html).
+你已经成功把你的环境分享给了全世界。恭喜! 继续阅读以了解更多关于[拆除处理](/intro/getting-started/teardown.html)。

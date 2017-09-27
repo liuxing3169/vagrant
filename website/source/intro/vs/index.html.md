@@ -7,7 +7,7 @@ description: |-
   environments. These pages detail similar tools to Vagrant.
 ---
 
-# Vagrant vs. Other Software
+# Vagrant 对比其它软件
 
 Vagrant is not the only tool to manage virtual machines and development
 environments. This section compares Vagrant to these other software choices.

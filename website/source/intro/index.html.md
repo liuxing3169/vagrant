@@ -9,66 +9,37 @@ description: |-
   the "works on my machine" excuse a relic of the past.
 ---
 
-# Introduction to Vagrant
+# 介绍Vagrant
 
 
-Vagrant is a tool for building and managing virtual machine environments in a
-single workflow. With an easy-to-use workflow and focus on automation, Vagrant
-lowers development environment setup time, increases production parity, and
-makes the "works on my machine" excuse a relic of the past.
+Vagrant是一个在单个工作流中用来创建和管理虚拟机环境的工具。通过一个简单易用的工作流程并聚焦在自动上。Vagrant通过易于使用的工作流程并专注于自动化，降低了开发环境设置时间，提高了生产平均水平，并使“我的机器上的作品”成为过去时。
 
-If you are already familiar with the basics of Vagrant, the
-[documentation](/docs/index.html) provides a better reference build for all
-available features and internals.
+如果你已经对Vagrant的基础非常熟悉，[文档](/docs/index.html)为所有可用的功能和内部结构提供了更好的参考。
 
-## Why Vagrant?
+## 为什么要用Vagrant?
 
-Vagrant provides easy to configure, reproducible, and portable work environments
-built on top of industry-standard technology and controlled by a single
-consistent workflow to help maximize the productivity and flexibility of you and
-your team.
+Vagrant提供建立在工业标准的技术之上，由单一控制工作流程的易于配置，可复制，可移植的工作环境 ，最大限度地提高生产力和灵活性给你和你的团队。
 
-To achieve its magic, Vagrant stands on the shoulders of giants. Machines
-are provisioned on top of VirtualBox, VMware, AWS, or
-[any other provider](/docs/providers/). Then, industry-standard
-[provisioning tools](/docs/provisioning/)
-such as shell scripts, Chef, or Puppet, can automatically install
-and configure software on the virtual machine.
+要释放它的魔力，Vagrant站在巨人的肩膀上。机器是构建在VirtualBox,VMware,AWS,或者[一些其他的提供商](/docs/providers/)之上。然后，工业标准的[配置工具](/docs/provisioning/)如shell scripts,Chef,或者Puppet，可以自动安装和配置软件到虚拟机里。
 
-### For Developers
+### 对于开发者
 
-If you are a **developer**, Vagrant will isolate dependencies and their
-configuration within a single disposable, consistent environment, without
-sacrificing any of the tools you are used to working with (editors, browsers,
-debuggers, etc.). Once you or someone else creates a single
-[Vagrantfile](/docs/vagrantfile/), you just need to `vagrant up` and everything
-is installed and configured for you to work. Other members of your team create
-their development environments from the same configuration, so whether you are
-working on Linux, Mac OS X, or Windows, all your team members are running code
-in the same environment, against the same dependencies, all configured the same
-way. Say goodbye to "works on my machine" bugs.
+如果你是一名**开发者**,Vagrant会隔离依赖和它们的配置在一个一次性的、一致的环境中，没有
+牺牲您所使用的工具(编辑器，浏览器，调试器,等等)。一旦你或者其他人创建了一个[Vagrantfile](/docs/vagrantfile/)，你只需要`vagrant up`，然后你工作所需的一切都已经安装并配置好了。
+你团队的其他成员可以从相同的配置创建他们自己的开发环境，所以不管你是在Linux，Mac OS X或者Windows下，你们团队的每一个成员都是在相同的环境，相同的依赖，所有配置都一致的方式下运行代码。对“在我的机器上运行没问题”的bug说再见。
 
-### For Operators
+### 对于运营者
 
-If you are an **operations engineer** or **DevOps engineer**, Vagrant gives you a disposable
-environment and consistent workflow for developing and testing infrastructure
-management scripts. You can quickly test things like shell scripts, Chef
-cookbooks, Puppet modules, and more using local virtualization such as
-VirtualBox or VMware. Then, with the _same configuration_, you can test these
-scripts on remote clouds such as AWS or RackSpace with the _same workflow_.
-Ditch your custom scripts to recycle EC2 instances, stop juggling SSH prompts to
-various machines, and start using Vagrant to bring sanity to your life.
+如果你是一名**实施工程师**或**运维工程师**，Vagrant给你一个可丢弃的环境和一致的工作流给开发和测试基础设施管理脚本，你可以快速测试如脚本，Chef
+cookbooks，Puppet模块，和更多使用如VirtualBox 或 VMware之类的本地虚拟化。然后，通过_相同的配置_，你可以在如AWS或RackSpace等远程云环境用_同样的工作流_测试这些脚本。
+抛弃您的自定义脚本来回收EC2实例，停止为各种机器提供SSH提示，开始用Vagrant给你的生活带来理智。
 
-### For Designers
+### 对于设计者
 
-If you are a **designer**, Vagrant will automatically set everything up that is
-required for that web app in order for you to focus on doing what you do best:
-design. Once a developer configures Vagrant, you do not need to worry about how
-to get that app running ever again. No more bothering other developers to help
-you fix your environment so you can test designs. Just check out the code,
-`vagrant up`, and start designing.
+如果你是**设计者**，Vagrant将会自动设置好一个web应用程序所需的一切必需条件，以便使你聚焦于你最擅长的部分：设计。
+一旦开发者配置好Vagrant，你就不必再担心如何去重新运行起一个web应用程序。不需要再劳烦其他的开发者来帮助修复你的环境然后才能做你最擅长的事情。
+仅仅需要做的是签出代码，然后运行`vagrant up`，然后开始设计。
 
-### For Everyone
+### 对于每个人
 
-Vagrant is designed for everyone as the easiest and fastest way to create a
-virtualized environment!
+Vagrant是为每个人设计的，它提供了一种简单，快速的方式来创建一个虚拟环境！

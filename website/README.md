@@ -1,21 +1,17 @@
 # Vagrant Website
 
-This subdirectory contains the entire source for the [Vagrant Website][vagrant].
-This is a [Middleman][middleman] project, which builds a static site from these
-source files.
+这个子目录包含[Vagrant Website][vagrant]的全部源代码。这是一个[Middleman][middleman]项目，从这些源文件中编译出一个静态站点。
 
-## Contributions Welcome!
+## 欢迎做贡献！
 
-If you find a typo or you feel like you can improve the HTML, CSS, or
-JavaScript, we welcome contributions. Feel free to open issues or pull requests
-like any normal GitHub project, and we'll merge it in.
+如果你找到了一个错别字或者你感觉你可以提高HTML, CSS, 或者Javascript, 我们都欢迎你做出贡献。
+就想其它平常的GitHub项目一样，随便地开启issues 或者 pull requests，我们都将合并它。
 
-## Running the Site Locally
+## 本地运行站点
 
-Running the site locally is simple. Clone this repo and run `make website`.
+在本地运行这个站点是非常简单的。Clone这个代码仓库，然后运行`make website`
 
-Then open up `http://localhost:4567`. Note that some URLs you may need to append
-".html" to make them work (in the navigation).
+然后打开`http://localhost:4567`。注意一些URLs你可能需要接受".html"以便让它们可以正常工作(在导航里)。
 
 [middleman]: https://www.middlemanapp.com
 [vagrant]: https://www.vagrantup.com

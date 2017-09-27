@@ -6,21 +6,15 @@ description: |-
   The first step in configuring any Vagrant project is to create a Vagrantfile.
 ---
 
-# Project Setup
+# 项目创建
 
-The first step in configuring any Vagrant project is to create a
-[Vagrantfile](/docs/vagrantfile/). The purpose of the
-Vagrantfile is twofold:
+配置任何Vagrant项目的第一步是创建[Vagrantfile](/docs/vagrantfile/)。Vagrantfile的用途有两点：
 
-1. Mark the root directory of your project. Many of the configuration
-   options in Vagrant are relative to this root directory.
+1. 标记项目的跟目录。Vagrant中的许多配置选项与此根目录相关。
 
-2. Describe the kind of machine and resources you need to run your project,
-   as well as what software to install and how you want to access it.
+2. 描述运行项目所需的机器和资源类型，以及要安装的软件和您想要访问的软件。
 
-Vagrant has a built-in command for initializing a directory for usage
-with Vagrant: `vagrant init`. For the purpose of this getting started guide,
-please follow along in your terminal:
+Vagrant有一个内置命令行可以初始化一个目录以用来使用Vagrant: `vagrant init`。 为了本入门指南的目的，请在您的终端中输入：
 
 ```
 $ mkdir vagrant_getting_started
@@ -28,19 +22,13 @@ $ cd vagrant_getting_started
 $ vagrant init
 ```
 
-This will place a `Vagrantfile` in your current directory. You can
-take a look at the Vagrantfile if you want, it is filled with comments
-and examples. Do not be afraid if it looks intimidating, we will modify it
-soon enough.
+这将在当前目录放置一个`Vagrantfile`。你可以看一下这个Vagrantfile，如果你想看的话，它里面写了一些注释和例子。
+如果看起来很吓人，请不要害怕，我们会尽快修改它。
 
-You can also run `vagrant init` in a pre-existing directory to
-set up Vagrant for an existing project.
+您也可以在预先存在的目录中运行`vagrant init`，以便为现有项目设置Vagrant。
 
-The Vagrantfile is meant to be committed to version control with
-your project, if you use version control. This way, every person working
-with that project can benefit from Vagrant without any upfront work.
+如果您使用版本控制，Vagrantfile可以和您的项目一起提交到版本控制。这样，每个从事该项目的人都可以从Vagrant得到任何前期工作。
 
-## Next Steps
+## 下一步
 
-You have successfully created your first project environment. Read on to learn
-more about [Vagrant boxes](/intro/getting-started/boxes.html).
+你已经成功创建了你的第一个项目环境。继续阅读以了解更多关于[Vagrant boxes](/intro/getting-started/boxes.html)。
