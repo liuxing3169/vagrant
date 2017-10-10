@@ -1,7 +1,7 @@
 ---
 layout: "docs"
 sidebar_current: "overview"
-page_title: "Documentation"
+page_title: "文档"
 description: |-
   Welcome to the documentation for Vagrant - the command line utility for
   managing the lifecycle of virtual machines. This website aims to document

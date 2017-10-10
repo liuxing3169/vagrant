@@ -1,6 +1,6 @@
 ---
 layout: "docs"
-page_title: "Uninstalling Vagrant"
+page_title: "卸载Vagrant"
 sidebar_current: "installation-uninstallation"
 description: |-
   Uninstalling Vagrant is easy and straightforward. You can either uninstall
@@ -8,24 +8,19 @@ description: |-
   do this on every platform.
 ---
 
-# Uninstalling Vagrant
+# 卸载Vagrant
 
-Uninstalling Vagrant is easy and straightforward. You can either uninstall
-the Vagrant binary, the user data, or both. The sections below cover how to
-do this on every platform.
+卸载Vagrant是简单直观的。你可以卸载Vagrant执行程序，用户数据，或者全部。下面的内容将涵盖如何在各平台上做这件事。
 
-## Removing the Vagrant Program
+## 移除Vagrant程序
 
-Removing the Vagrant program will remove the `vagrant` binary and all
-dependencies from your machine. After uninstalling the program, you can
-always [reinstall](/docs/installation/) again using standard
-methods.
+移除Vagrant程序将从你的机器上移除`vagrant`执行程序和所有依赖关系。在卸载执行程序后，你可以使用标准方法[重新安装](/docs/installation/)。
 
-On **Windows**
+在 **Windows**
 
-> Uninstall using the add/remove programs section of the control panel
+> 在控制面板使用添加/移除应用程序来进行卸载
 
-On **Mac OS X**:
+在 **Mac OS X**:
 
 ```sh
 rm -rf /opt/vagrant
@@ -33,23 +28,19 @@ rm -f /usr/local/bin/vagrant
 sudo pkgutil --forget com.vagrant.vagrant
 ```
 
-On **Linux**:
+在 **Linux**:
 
 ```sh
 rm -rf /opt/vagrant
 rm -f /usr/bin/vagrant
 ```
 
-## Removing User Data
+## 移除用户数据
 
-Removing the user data will remove all [boxes](/docs/boxes.html),
-[plugins](/docs/plugins/), license files, and any stored state that may be used
-by Vagrant. Removing the user data effectively makes Vagrant think it
-is a fresh install.
+移除用户数据将会移除所有的[盒子](/docs/boxes.html),[插件](/docs/plugins/),许可文件，和其他Vagrant可能用到的任何文件。
+移除用户数据有效的使Vagrant认为它将会是一个全新的安装。
 
-On all platforms, remove the `~/.vagrant.d` directory to delete the user
-data. When debugging, the Vagrant support team may ask you to remove this
-directory. Before removing this directory, please make a backup.
+在所有平台上，移除`~/.vagrant.d`目录就可以删除用户数据。在调试时，Vagrant的支持团队可能会问你是否要移除此目录。
+在移除此目录前，请做好备份。
 
-Running Vagrant will automatically regenerate any data necessary to run,
-so it is safe to remove the user data at any time.
+运行Vagrant将会自动的重新生成数据，因此在任何时间移除用户数据都是安全的。

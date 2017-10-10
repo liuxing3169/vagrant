@@ -1,41 +1,27 @@
 ---
 layout: "docs"
-page_title: "Backwards Compatibility"
+page_title: "向后兼容性"
 sidebar_current: "installation-backwards-compatibility"
 description: |-
   Vagrant makes a very strict backwards-compatability promise.
 ---
 
-# Backwards Compatibility
+# 向后兼容性
 
-## For 1.0.x
+## 对于1.0.x
 
-Vagrant 1.1+ provides full backwards compatibility for valid Vagrant 1.0.x
-Vagrantfiles which do not use plugins. After installing Vagrant 1.1, your 1.0.x
-environments should continue working without modifications, and existing running
-machines will continue to be managed properly.
+Vagrant 1.1以上版本提供了完整向后兼容有效的Vagrant 1.0.x Vagrantfiles且不需任何插件。
+安装Vagrant1.1之后，你的1.0.x环境应该可以继续工作而不需要做任何修改，已经运行的机器可以继续正确的被管理。
 
-This compatibility layer will remain in Vagrant up to and including Vagrant 2.0.
-It may still exist after that, but Vagrant's compatibility promise is only for
-two versions. Seeing that major Vagrant releases take years to develop and
-release, it is safe to stick with your version 1.0.x Vagrantfile for the
-time being.
+这种兼容层将会保留在Varant中，包含Vagrant2.0。在此之后可能还会继续存在。但是Vagrant的兼容性许诺是只对2个版本。
+鉴于Vagrant的主干发行会花费数年来开发和发布，因此你的1.0.x版本的Vagrantfile会暂时安全。
 
-If you use any Vagrant 1.0.x plugins, you must remove references to these from
-your Vagrantfile prior to upgrading. Vagrant 1.1+ introduces a new plugin
-format that will protect against this sort of incompatibility from ever
-happening again.
+如果你使用了任何1.0.x的插件，你必须从你更新之前从Vagrantfile移除这些引用。
+Vagrant1.1以上版本包含了新的插件，这种格式将防止这种与之不相容的形式再次发生。
 
-## For 1.x
+## 对于1.x
+1.x之间的向后兼容性不被承诺，Vagrantfile的语法稳定性在2.0 final之前是不被承诺的。 1.x中的任何向后不兼容性将被清楚地记录在案。
 
-Backwards compatibility between 1.x is not promised, and Vagrantfile
-syntax stability is not promised until 2.0 final. Any backwards
-incompatibilities within 1.x will be clearly documented.
+这与Vagrant 0.x的处理方式类似。 在实践中，Vagrant 0.x在整个开发周期中仅引入了一些向后的不兼容性，但是向后不兼容的可能性是明确的，所以人们并不感到惊讶。
 
-This is similar to how Vagrant 0.x was handled. In practice, Vagrant 0.x
-only introduced a handful of backwards incompatibilities during the entire
-development cycle, but the possibility of backwards incompatibilities
-is made clear so people are not surprised.
-
-Vagrant 2.0 final will have a stable Vagrantfile format that will
-remain backwards compatible, just as 1.0 is considered stable.
+Vagrant 2.0最终将具有稳定的Vagrantfile格式，将保持向后兼容，就像1.0被认为是稳定的。

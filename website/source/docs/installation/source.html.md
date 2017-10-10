@@ -1,6 +1,6 @@
 ---
 layout: "docs"
-page_title: "Installing Vagrant from Source"
+page_title: "从源文件安装Vagrant"
 sidebar_current: "installation-source"
 description: |-
   Installing Vagrant from source is an advanced topic and is only recommended
@@ -8,71 +8,61 @@ description: |-
   steps and prerequisites for installing Vagrant from source.
 ---
 
-# Installing Vagrant from Source
+# 从源文件安装Vagrant
 
-Installing Vagrant from source is an advanced topic and is only recommended
-when using the official installer is not an option. This page details the
-steps and prerequisites for installing Vagrant from source.
+从源文件安装Vagrant是一个高级话题，仅建议在使用官方安装器不是一个选项时使用。
+这个页面介绍了从源文件安装Vagrant的详细步骤和前提条件。
 
-## Install Ruby
-You must have a modern Ruby (>= 2.2) in order to develop and build Vagrant. The
-specific Ruby version is documented in the Vagrant's `gemspec`. Please refer to
-the `vagrant.gemspec` in the repository on GitHub, as it will contain the most
-up-to-date requirement. This guide will not discuss how to install and manage Ruby.
-However, beware of the following pitfalls:
+## 安装Ruby
+你必须有一个现代的Ruby (>= 2.2)以便开发和编译Vagrant。Vagrant的`gemspec`中记录了具体的Ruby版本。
+请参考GitHub代码仓库中的`vagrant.gemspec`，它会包含更多的最新的需求。
+这个向导将不会解释如何安装和管理Ruby。无论如何，小心一下陷阱：
 
-- Do **NOT** use the system Ruby - use a Ruby version manager like rvm or chruby
-- Vagrant plugins are configured based on current environment. If plugins are installed
-  using Vagrant from source, they will not work from the package based Vagrant installation.
+- 请 **不要** 使用系统自带的Ruby - 使用一个Ruby版本管理器，例如rvm或chruby
+- 基于当前环境配置Vagrant插件。如果使用Vagrant从源文件中安装插件，则它们无法从基于包的Vagrant安装中正常工作。
 
-## Clone Vagrant
-Clone Vagrant's repository from GitHub into the directory where you keep code on your machine:
-
+## 克隆Vagrant
+从GitHub克隆Vagrant的代码仓库到你电脑上保持编码的路径：
 
 ```shell
 $ git clone https://github.com/mitchellh/vagrant.git
 ```
 
-Next, `cd` into that path. All commands will be run from this path:
+下一步, `cd` 到这个路径。所有的命令都将从这个路径开始运行：
 
 ```shell
 $ cd /path/to/your/vagrant/clone
 ```
 
-Run the `bundle` command with a required version* to install the requirements:
+运行`bundle` 命令，带上一个必需的版本*以安装前置条件：
 
 ```shell
 $ bundle install
 ```
 
-You can now run Vagrant by running `bundle exec vagrant` from inside that
-directory.
+你现在可以从刚才的路径下通过运行`bundle exec vagrant` 运行Varant。
 
-## Use Locally
-In order to use your locally-installed version of Vagrant in other projects, you will need to create a binstub and add it to your path.
+## 使用本地
+为了在其他的项目中使用你本地安装版本的Vagrant，你将需要创建一个binstub并将它添加到你的path变量中。
 
-First, run the following command from the Vagrant repo:
-
+首先，从Vagrant仓库运行下面的命令：
 ```shell
 $ bundle --binstubs exec
 ```
 
-This will generate files in `exec/`, including `vagrant`. You can now specify
-the full path to the `exec/vagrant` anywhere on your operating system:
+这将会在`exec/`生成文件，包含`vagrant`。现在可以在你的操作系统任何地方指定到`exec/vagrant`的全路径：
 
 ```shell
 $ /path/to/vagrant/exec/vagrant init -m hashicorp/precise64
 ```
 
-Note that you _will_ receive warnings that running Vagrant like this is not
-supported. It's true. It's not. You should listen to those warnings.
+注意你将收到警告，如运行Vagrant不被允许。这些警告是真的。你应该听取这些警告的建议。
 
-If you do not want to specify the full path to Vagrant (i.e. you just want to
-run `vagrant`), you can create a symbolic link to your exec:
+如果你不想指定到Vagrant的全路径(例如，你只是想运行`vagrant`),你可以创建一个到你执行路径的软连接：
 
 ```shell
 $ ln -sf /path/to/vagrant/exec/vagrant /usr/local/bin/vagrant
 ```
 
-When you want to switch back to the official Vagrant version, simply
-remove the symlink.
+当你想切换回官方Vagrant版本，简单的移除软连接就可以了。
+
