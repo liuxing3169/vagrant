@@ -1,30 +1,22 @@
 ---
 layout: "docs"
-page_title: "Organization Authentication Policy"
+page_title: "组织身份认证策略"
 sidebar_current: "vagrant-cloud-organizations-authentication-policy"
 ---
 
 
-# Set an Organization Authentication Policy
+# 设置一个组织身份认证策略
 
-Because organization membership affords members access to potentially sensitive
-resources, owners can set organization-wide authentication policy in Vagrant
-Enterprise.
+由于组织成员资格允许成员访问潜在的敏感资源，拥有者可以在Vagrant Enterprise中设置组织范围内的身份验证策略。
 
-## Requiring Two-Factor Authentication
+## 要求双重身份认证
 
-Organization owners can require that all organization team members use
-[two-factor authentication](/docs/vagrant-cloud/users/authentication.html).
-Those that lack two-factor authentication will be locked out of the web
-interface until they enable it or leave the organization.
+组织拥有者可以要求所有的组织团队成员都使用[双重身份认证](/docs/vagrant-cloud/users/authentication.html).
+那些缺乏双因素身份验证的人将被锁定在web界面之外，直到他们启用双重身份认证或离开组织。
 
-Visit your organization's configuration page to enable this feature. All
-organization owners must have two-factor authentication enabled to require the
-practice organization-wide. Note: locked-out users are still be able to interact
-with Vagrant Cloud using their `ATLAS_TOKEN`.
+浏览你的组织配置页面，启用这个功能。所有组织拥有者必须进行双重认证才能请求组织内的实施。
+注意：锁定的用户还可以继续使用他们的`ATLAS_TOKEN`和Vagrant云进行交互。
 
-## Disabling Two-Factor Authentication Requirement
+## 禁用双重身份认证请求
 
-Organization owners can disable the two-factor authentication requirement from
-their organization's configuration page. Locked-out team members (those who have
-not enabled two-factor authentication) will have their memberships reinstated.
+组织拥有者可以从他们的组织配置页面禁用双重身份认证要求。锁定的团队成员(那些不能进行双重身份认证的人)将会恢复他们的会员权益。

@@ -1,44 +1,35 @@
 ---
 layout: "docs"
-page_title: "Private Boxes"
+page_title: "私有盒子"
 sidebar_current: "vagrant-cloud-boxes-private"
 ---
 
-# Private Boxes
+# 私有盒子
 
-If you create a private box, only you (the owner) and collaborators
-will be able to access it.
+如果你创建了一个私有盒子，只有你(拥有者)和贡献者可以访问它。
 
-## Collaborators
+## 贡献者
 
-To add a collaborator:
+添加一个贡献者：
 
-1. Click the gear setting beside the boxes name in order to edit it.
-2. Under the "Add Collaborator" section, enter their username and
-submit the form.
-3. You'll now see a list of collaborators, and if necessary a collaborator
-can be removed.
+1. 单击盒子名称旁边的齿轮设置，以进行编辑。
+2. 在“添加贡献者”区域下，输入他们的用户名并提交表单。
+3. 你将会看到贡献者列表，并可在需要时移除参与者。
 
-Collaborators can edit the box, versions and providers. The only
-things they cannot do are:
+贡献者可以编辑盒子，版本和提供者。唯一不能做的事情是：
 
-- Add another collaborator
-- Delete the box
+- 添加其他贡献者
+- 删除盒子
 
-## Vagrant Login
+## Vagrant登录
 
-In order to access these boxes from Vagrant, you'll need to first
-authenticate with your Vagrant Cloud account.
+为了从Vagrant访问这些盒子，你将需要先对Vagrant云的账号进行身份认证。
 
-1. Run `vagrant login`
-2. Enter your credentials
+1. 运行 `vagrant login`
+2. 输入你的凭证
 
-You should now be logged in. We use these credentials to request
-a unique authentication token that is stored locally by Vagrant. Your
-username or password is never stored on your machine.
+你应该已经登录了。我们使用这些凭证来请求一个唯一授权票据(token)并将它存到本地电脑上。你的用户名和密码永远不会被存储到机器上。
 
-## 404 Not Found
+## 404未找到
 
-If you don't authenticate, you will likely receive a `404 Not Found`
-error in Vagrant. We return a 404 for security reasons, so a potential
-attacker could not verify if a private box exists.
+如果你没有进行身份鉴定，你将会在Vagrant收到一个类似`404 Not Found`的错误。我们为安全原因返回一个404，所以一些潜在的破坏者就不能去验证是否有一个私有盒子的存在。

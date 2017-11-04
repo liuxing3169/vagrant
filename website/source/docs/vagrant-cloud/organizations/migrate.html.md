@@ -1,24 +1,20 @@
 ---
 layout: "docs"
-page_title: "Migrate User to Organization"
+page_title: "迁移用户到组织中"
 sidebar_current: "vagrant-cloud-organizations-migrate"
 ---
 
-# Migrate User to Organization
+# 迁移用户到组织中
 
-To migrate an existing user account to an organization:
+迁移一个已经存在的用户账号到一个组织：
 
-1. Create or retrieve the username of a new personal account. You'll add this
-account as an "owner" for the new organization during the migration process. If
-you already have another account, write down your username.
+1. 创建或检索新的个人帐户的用户名。 您将在迁移过程中将此帐户添加为新组织的“所有者”。
+如果你已经有了另一个账号，写下你的用户名。
 
-2. Sign in as the account you wish to migrate and visit the migration page.
+2. 以您想要迁移的帐户登录并访问迁移页面。
 
-3. Put the username of the personal account you wish to make an owner of the
-organization into the username text field and press "Migrate".
+3. 把你希望成为组织所有者的个人账户的用户名放入用户名文本字段，然后按“迁移”。
 
-4. You should now be logged out and receive a confirmation email with the
-personal account you migrated to.
+4. 您现在应该已经被退出登录并收到一封确认电子邮件，其中包含您迁移到的个人帐户。
 
-5. Now, sign in with your personal account. If you visit you settings page, you
-should see your migrated organization available to administrate.
+5. 现在，用您的个人帐户登录。 如果你访问你的设置页面，你应该看到你的迁移组织可以管理。

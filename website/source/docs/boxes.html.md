@@ -1,6 +1,6 @@
 ---
 layout: "docs"
-page_title: "Boxes"
+page_title: "盒子"
 sidebar_current: "boxes"
 description: |-
   Boxes are the package format for Vagrant environments. A box can be used by
@@ -8,74 +8,59 @@ description: |-
   working environment.
 ---
 
-# Boxes
+# 盒子
 
-Boxes are the package format for Vagrant environments. A box can be used by
-anyone on any platform that Vagrant supports to bring up an identical
-working environment.
+盒子是Vagrant环境下的包装格式。一个盒子可以被用在Vagrant支持的任意平台上， 从而带给开发团队一个统一的工作环境。
 
-The `vagrant box` utility provides all the functionality for managing
-boxes. You can read the documentation on the [vagrant box](/docs/cli/box.html)
-command for more information.
+`vagrant box`提供了管理盒子所用到的所有功能。你可以阅读[vagrant box](/docs/cli/box.html)命令的文档了解更多信息。
 
-The easiest way to use a box is to add a box from the
-[publicly available catalog of Vagrant boxes](https://vagrantcloud.com/boxes/search).
-You can also add and share your own customized boxes on this website.
+使用一个盒子最简单的方式时从[Vagrant盒子的公有可见目录](https://vagrantcloud.com/boxes/search)添加一个盒子。
+你也可以填写和分享你自己定义的盒子到这个网站上。
 
-Boxes also support versioning so that members of your team using Vagrant
-can update the underlying box easily, and the people who create boxes
-can push fixes and communicate these fixes efficiently.
+盒子还支持版本化，因此团队的成员使用Vagrant可以轻松的更新基础盒子，创建盒子的人可以推送修复，而且这些修复会有效的进行传达。
 
-You can learn all about boxes by reading this page as well as the
-sub-pages in the navigation to the left.
+您可以通过阅读此页面以及左侧导航栏中的子页面了解关于盒子的所有信息。
 
-## Discovering Boxes
+## 发现盒子
 
-The easiest way to find boxes is to look on the
-[public Vagrant box catalog](https://vagrantcloud.com/boxes/search)
-for a box matching your use case. The catalog contains most major operating
-systems as bases, as well as specialized boxes to get you up and running
-quickly with LAMP stacks, Ruby, Python, etc.
+查找盒子的最简单的方法是查看[公共Vagrant盒子目录](https://vagrantcloud.com/boxes/search)，找到符合您使用的盒子。
+目录包含了大多数主流的操作系统作为基础，以及使用LAMP堆栈，Ruby，Python等快速启动和运行的盒子。
 
-The boxes on the public catalog work with many different
-[providers](/docs/providers/). Whether you are using Vagrant with
-VirtualBox, VMware, AWS, etc. you should be able to find a box you need.
+公共目录中的盒子在多种不同的[提供者](/docs/providers/)上工作。无论你是使用Vagrant和VirtualBox, VMware, AWS, 等等，
+你应该都可以找到你所需要的盒子。
 
-Adding a box from the catalog is very easy. Each box shows you instructions
-with how to add it, but they all follow the same format:
+从目录添加一个盒子是非常简单的。每一个盒子都像你介绍了如何添加它，但它们都遵从相同的格式：
 
 ```
 $ vagrant box add USER/BOX
 ```
 
-For example: `vagrant box add hashicorp/precise64`. You can also quickly
-initialize a Vagrant environment with `vagrant init hashicorp/precise64`.
+例如: `vagrant box add hashicorp/precise64`. 你可以通过`vagrant init hashicorp/precise64`快速地初始化一个Vagrant环境。
 
-~> **Namespaces do not guarantee canonical boxes!** A common misconception is
-that a namespace like "ubuntu" represents the canonical space for Ubuntu boxes.
-This is untrue. Namespaces on Vagrant Cloud behave very similarly to namespaces on
-GitHub, for example. Just as GitHub's support team is unable to assist with
-issues in someone's repository, HashiCorp's support team is unable to assist
-with third-party published boxes.
+~> **命名空间不能保证盒子的权威!** 一个普遍的误解是如"ubuntu"这样的名称空间代表了Ubuntu盒子的权威空间。
+这是不对的。在Vagrant云上的名称空间和GitHub上的名称空间非常相似，例如，就像GitHub的支持团队不能在其他人的代码仓库分配问题，
+HashiCorp的支持团队不能帮助第三方发布盒子。
 
-## Official Boxes
+## 官方盒子
 
-HashiCorp (the makers of Vagrant) publish a basic Ubuntu 12.04 (32 and 64-bit) box that is available for minimal use cases. It is highly optimized, small in size, and includes support for Virtualbox and VMware. You can use it like this:
+HashiCorp (Vagrant的制作者) 发布一个基础的Ubuntu 12.04(32 and 64-bit)盒子可用于少量的一些使用场景。
+它是高度优化过的，体积非常小，包含了支持Virtualbox和VMware。你可以如下面的方式使用它：
 
 ```shell
 $ vagrant init hashicorp/precise64
 ```
 
-or you can update your `Vagrantfile` as follows:
+或者你可以更新你的`Vagrantfile` 如下：
 
 ```ruby
 Vagrant.configure("2") do |config|
   config.vm.box = "hashicorp/precise64"
 end
 ```
+对于其他用户，我们推荐[Bento boxes](https://vagrantcloud.com/bento)。Bento boxes是[开源](https://github.com/chef/bento)的并
+为多数的提供者创建，包括VMware, Virtualbox,和Parallels。有多种操作系统和各种版本可用。
 
-For other users, we recommend the [Bento boxes](https://vagrantcloud.com/bento). The Bento boxes are [open source](https://github.com/chef/bento) and built for a number of providers including VMware, Virtualbox, and Parallels. There are a variety of operating systems and versions available.
+这里只有两种官方推荐的盒子集合。
 
-These are the only two officially-recommended box sets.
-
-~> **It is often a point of confusion**, but Canonical (the company that makes the Ubuntu operating system) publishes boxes under the "ubuntu" namespace on Vagrant Cloud. These boxes only support Virtualbox and do not provide an ideal experience for most users. If you encounter issues with these boxes, please try the Bento boxes instead.
+~> **这通常是一种困惑**, 但是官方(制作Ubuntu操作系统的公司)发布盒子到到Vagrant云的"ubuntu"名称空间下。
+这些盒子仅支持Virtualbox，并不为大多数用户提供理想的体验。如果你使用这些盒子时遇到问题，请尝试用Bento boxes替代。

@@ -1,31 +1,32 @@
 ---
 layout: "docs"
-page_title: "Request Limits"
+page_title: "请求限制"
 sidebar_current: "vagrant-cloud-request-limits"
 ---
 
-# Request Limits
+# 请求限制
 
-## What is Rate Limiting?
+## 什么是速率限制?
 
-Rate limiting is a process to protect our quality of service we provide to you. Rate limiting will limit the number of requests a client may send to services over a set time interval. We track requests by IP address origin of the request.
+速率限制是保护我们提供给您的服务质量的一个过程。速率限制将限制客户端可能在设定的时间间隔内向服务发送的请求数量。
+我们通过请求的IP地址来源跟踪请求。
 
-## How many requests can I make?
+## 我可以发送多少请求?
 
-You can make a set amount of requests per minute from a single IP address. This rate can vary per resource but the current value is returned in the HTTP headers of your request.  For the most up to date rate limiting for your requests please view the information in the headers of your response.
+您可以从一个IP地址每分钟发出一定数量的请求。这个速率可以改变每个资源，但是当前的值是在你的请求的HTTP请求头中返回的。 对于您的请求的最新速率限制，请查看您的响应头中的信息。
 
-## Why are you rate limiting my requests?
+## 为什么你对我的请求进行速率限制?
 
-We have detected a request rate in excess of our current threshold. To provide a high quality of services to all users, your request may have been rate limited.
+我们检测到一个超出我们目前的门槛的请求率。 为了向所有用户提供高质量的服务，您的请求可能已被限制。
 
-## How do I know if I have been rate limited?
+## 我如何知道是否我被做了等级限制?
 
-If you have received a 429 HTTP status code in the response to your request, your request has likely been rate limited. There is some additional information in the headers that will help you determine if this is the case. Each request response will include the headers:  X-RateLimit-Limit, X-RateLimit-Remaining, and X-RateLimit-Reset.
+如果您在您的请求的响应时收到了一个429HTTP状态码，则您的请求可能受到速率限制。 标题中有一些额外的信息可以帮助您确定是否属于这种情况。 每个请求响应头中将包括：X-RateLimit-Limit，X-RateLimit-Remaining和X-RateLimit-Reset。
 
-- **X-RateLimit-Limit**: The current maximum number of requests allowed from your client.
-- **X-RateLimit-Remaining**: How many requests you have remaining in the time window.
-- **X-RateLimit-Reset**: The unix timestamp for when the window resets.
+- **X-RateLimit-Limit**: 当前客户端允许的最大请求数。
+- **X-RateLimit-Remaining**: 在时间窗口中剩余多少个请求。
+- **X-RateLimit-Reset**: 窗口重置时的unix时间戳。
 
-## My use case requires more requests.  What do I do?
+## 我的使用案例需要更多请求。我可以做什么？
 
-Please contact support@hashicorp.com.
+请联系 support@hashicorp.com.

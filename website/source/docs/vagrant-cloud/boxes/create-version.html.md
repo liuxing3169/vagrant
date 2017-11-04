@@ -1,29 +1,21 @@
 ---
 layout: "docs"
-page_title: "Create a New Box Version"
+page_title: "创建一个盒子的新版本"
 sidebar_current: "vagrant-cloud-boxes-create-version"
 ---
 
-# Create a New Box Version
+# 创建一个盒子的新版本
 
-To release a new version of a box to the public or to your team:
+发布盒子的的一个新版本到公共环境或者给你的团队：
 
-  1. Click on the name of the box you want to release a new version for.
+  1. 点击你想要发布新版本的盒子的名字。
 
-  2. To the right of the box name, there is a dropdown of all the available
-     versions. Click this, and click "Create a New Version"
+  2. 在盒子名字的右边，有一个下拉框里面有所有可用的版本。点击一个，再点击“创建新版本”
 
-  3. Enter details for your new version and click "Create Version." Note that
-     after clicking create version, the version is not yet _released_.
+  3. 输入新版本的详细信息，并点击“创建版本”。注意：在点击创建版本之后，版本是还没有_发布的_。
 
-  4. Click "Create new provider" on this next page to add at least one
-     provider to the version. Specify the name of the provider (this is the
-     same value you specify to `--provider` when using Vagrant). Then
-     enter the URL to a self-hosted box file or upload a box to us.
+  4. 在下一页单击“创建新的提供者”，以添加至少一个版本的提供者。指定提供者的名称(此值与你在使用Vagrant时指定的`--provider`相同)。然后输入到一个自托管的盒子文件的URL或上传一个盒子给我们。
 
-  5. Once the provider is created, you now have the option to release the
-     version by clicking "Release now," or you can add more providers.
+  5. 一旦提供者创建好，你可以有一个选项 创建提供者后，您现在可以通过单击“立即发布”来发布版本，也可以添加更多提供程序。
 
-Once you click "Release now," that version will be available for installation
-with Vagrant. Before clicking this, Vagrant does not know the version even
-exists.
+当你点击“立即发布”，这个版本将会在使用Vagrant进行安装时可以使用。在点击之前，Vagrant不知道版本的存在。

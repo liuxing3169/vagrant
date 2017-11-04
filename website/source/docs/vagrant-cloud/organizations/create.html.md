@@ -1,15 +1,13 @@
 ---
 layout: "docs"
-page_title: "Create an Organization"
+page_title: "创建一个组织"
 sidebar_current: "vagrant-cloud-organizations-create"
 ---
 
-# Create an Organization
+# 创建一个组织
 
-To create an organization:
+创建一个组织需要:
 
-1. Create a personal account. You'll use this to create and administrate the
-organization. You'll be able to add other users as owners of the organization,
-so it won't be tied solely to your account.
+1. 创建一个个人账号。你将使用这个个人账号创建和管理组织。你可以添加其他用户作为组织的拥有者，因此不会单独的系住你的账号。
 
-1. Visit your new organization page to create the organization.
+1. 访问你的新组织页面，并创建组织。

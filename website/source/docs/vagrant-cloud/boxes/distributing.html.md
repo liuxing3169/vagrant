@@ -1,59 +1,46 @@
 ---
 layout: "docs"
-page_title: "Distributing Boxes"
+page_title: "分发盒子"
 sidebar_current: "vagrant-cloud-boxes-distributing"
 ---
 
-## Distributing Boxes
+## 分发盒子
 
-To distribute the box to your team, update your Vagrantfile to reference the
-box on Vagrant Cloud.
+分发盒子给你的团队，更新你的Vagrantfile以引用Vagrant云上的盒子。
 
     Vagrant.configure(2) do |config|
       config.vm.box = "username/example-box"
     end
 
-Now when a team member runs `vagrant up`, the box will be downloaded from Vagrant Cloud.
-If the box is private, the team member will be prompted to authorize access. Users
-are granted access to private resources by logging in with a Vagrant Cloud username and
-password or by using a shared Vagrant Cloud token.
-[Learn more about authorization options here](/docs/vagrant-cloud/users/authentication.html).
+现在当团队的成员运行`vagrant up`时，盒子将会被从Vagrant云上下载。如果盒子是私有的，那么团队成员将会被提示进行身份认证。
+通过账户名和密码登录到Vagrant云上或者通过使用一个共享的Vagrant云token，用户就会获取私有资源的访问权限。
+[了解更多关于授权选项](/docs/vagrant-cloud/users/authentication.html).
 
-## Private Boxes
+## 私有盒子
 
-If you create a private box, only you (the owner) and collaborators
-will be able to access it. This is valuable if you
-have information, data or provisioning in your box
-that cannot be public.
+如果你创建了一个私有盒子，只有你(拥有者)和贡献者可以访问它。如果你的盒子中有信息，数据或配置不能公开，这将是很有价值的。
 
-Private boxes will be excluded from the box catalog.
+私有盒子将会被从盒子目录中排除。
 
-### Collaborators
+### 合作者
 
-Collaborators can be both teams in
-organizations or individual users.
+合作者可以是组织中的团队或者个人用户。
 
-To add a collaborator:
+添加一个合作者：
 
-1. Go to the "Access" page of a box via the sidebar
-2. Enter the username or team name and submit the form
-3. You'll now see an the user or team in the list of collaborators,
-and if necessary a collaborator can be removed
+1. 通过侧边栏到盒子的“访问”页面
+2. 输入用户名或者团队名称并提交表单
+3. 你将会看到用户或团队已经在贡献者列表中了，如果需要，你可以移除贡献者
 
-### Vagrant Login
+### Vagrant登录
 
-In order to access these private boxes from Vagrant, you'll need to first
-authenticate with your Vagrant Cloud account.
+为了在Vagrant访问这些私有盒子，你需要先认证你的Vagrant云账号。
 
-1. Run `vagrant login`
-2. Enter your credentials
+1. 运行 `vagrant login`
+2. 输入你的凭证
 
-You should now be logged in. We use these credentials to request
-a unique authentication token that is stored locally by Vagrant. Your
-username or password is never stored on your machine.
+你应该已经登录了。我们使用这些凭证来请求一个唯一身份认证票据(token)存储到本地。你的用户名或密码永远不会被保存到你的电脑上。
 
-### 404 Not Found
+### 404 未找到
 
-If you don't authenticate, you will likely receive a `404 Not Found`
-error in Vagrant. We return a 404 for security reasons, so a potential
-attacker could not verify if a private box exists.
+如果你没有完成身份认证，你讲会看到一个Vagrant`404 Not Found`错误。我们因安全原因返回404,因此一些潜在的破坏者就不能验证是否有一个私有盒子存在。

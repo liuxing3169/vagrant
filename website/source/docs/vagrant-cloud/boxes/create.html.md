@@ -1,80 +1,63 @@
 ---
 layout: "docs"
-page_title: "Creating a New Vagrant Box"
+page_title: "创建一个新的Vagrant盒子"
 sidebar_current: "vagrant-cloud-boxes-create-x"
 ---
 
-# Creating a New Vagrant Box
+# 创建一个新的Vagrant盒子
 
-This page will cover creating a new box in Vagrant Cloud and how to distribute
-it to users. Boxes can be distributed without Vagrant Cloud, but
-miss out on several [important features](/docs/vagrant-cloud/boxes).
+这个页面涵盖了在Vagrant云中创建一个新盒子和如何将它分发给用户。盒子可以不通过Vagrant云进行分发，但是会错过一些[重要的特性](/docs/vagrant-cloud/boxes)。
 
-There are __three ways to create and upload Vagrant Boxes to Vagrant Cloud__. All
-three options are outlined below.
+这里有_三种方式来创建和上传Vagrant盒子到Vagrant云_。三种选项都列在下面。
 
-We recommend using Packer, as is it is fully repeatable and keeps a strong
-history of changes within Vagrant Cloud. However, for some situations, including
-legacy workflows, the Web UI or API will work well.
+我们建议使用Packer，因为它是完全可重复的，并保持在Vagrant Cloud中有很强大的变化历史。
+无论如何，在一些情景下，包括一些遗留的工作，Web UI或API等。
 
-All three options require you [sign up for Vagrant Cloud](https://vagrantcloud.com/account/new).
+所有这三种方式都要求你[注册Vagrant云账号](https://vagrantcloud.com/account/new)。
 
-## Creating Boxes with Packer
+## 使用Packer创建盒子
 
-Using Packer requires more up front effort, but the repeatable and
-automated builds will end any manual management of boxes. Additionally,
-all boxes will be stored and served from Vagrant Cloud, keeping a history along
- the way.
+使用Packer需要更多的前期工作，但可重复和自动化的构建将结束对盒子的任何手动管理。此外，所有的盒子都将被在Vagrant云上进行存储和提供，保持变更历史。
 
-## Creating Boxes via the Vagrant Cloud Web Interface
+## 通过Vagrant云Web接口创建盒子
 
-You'll first need to create a box file. This can be done via
-the [vagrant `package` command](http://docs.vagrantup.com/v2/boxes/base.html)
-or with Packer locally.
+你需要先创建一个盒子文件。这可以通过[vagrant `package` command](http://docs.vagrantup.com/v2/boxes/base.html)完成或通过本地Packer。
 
-After you've created the `.box` file, this guide can be followed.
+在你创建完`.box`文件后，可以遵循这个向导。
 
-1. Go to the [Create Box](https://vagrantcloud.com/boxes/new) page.
+1. 去到创建[盒子](https://vagrantcloud.com/boxes/new)页面。
 
-1. Name the box and give it a simple description
+1. 命名盒子并给它一个简单的解释说明
 
-1. Create your first version for the box. This version
-must match the format `[0-9].[0-9].[0-9]`
+1. 创建你盒子的首个版本。这个版本必须匹配格式 `[0-9].[0-9].[0-9]`
 
-1. Create a provider for the box, matching the provider you need
-locally in Vagrant. `virtualbox` is the most common provider.
+1. 为盒子创建一个提供者，匹配你需要在本地的Vagrant中使用的提供者。`virtualbox`是一个非常常用的提供者。
 
-1. Upload the `.box` file for each provider, or use a url to the `.box`
-file that is publicly accessible
+1. 为每一个提供者上传 `.box`文件，或者使用一个可以公共访问的 `.box`文件的url
 
-You can find all of your boxes in the [Vagrant section](https://vagrantcloud.com/vagrant) of Vagrant Cloud.
+你可以在Vagrant Cloud中[Vagrant section](https://vagrantcloud.com/vagrant)找到你所有的盒子。
 
-Once you've created and released a box, you can release new versions of
-the box by clicking "Create New Version" under the versions sidebar on
-a box page. For more information on the release lifecycle of boxes, see
-the [help page dedicated to box lifecycle](/docs/vagrant-cloud/boxes/lifecycle.html).
+当你创建并发布了一个盒子，你可以通过点击盒子页面"创建新版本"来发布盒子新的版本。关于更多盒子的发布生命周期的更多信息，请参考[专用于盒子生命周期的帮助页面](/docs/vagrant-cloud/boxes/lifecycle.html)。
 
-## Creating Boxes with the API
+## 使用API创建盒子
 
-This example uses the API to upload boxes with `curl`. To get started, you'll
-need to get an [access token](https://vagrantcloud.com/settings/tokens).
+这个例子使用API通过`curl`上传盒子。开始使用，你需要获取一个[访问票据(access token)](https://vagrantcloud.com/settings/tokens)。
 
-Then, prepare the upload:
+然后，准备上传：
 
     $ curl 'https://vagrantcloud.com/api/v1/box/USERNAME/BOX_NAME/version/VERSION/provider/PROVIDER_NAME/upload?access_token=ACCESS_TOKEN'
 
-This should return something like this:
+这将会返回类似下面的信息：
 
     {
       "upload_path": "https://archivist.hashicorp.com/v1/object/630e42d9-2364-2412-4121-18266770468e"
     }
-
-Then, upload your box with the following command, with the filename in this case being `foo.box`:
+然后，使用下面的命令上传你的盒子，在这个例子中文件名会是`foo.box`：
 
     $ curl -X PUT --upload-file foo.box https://archivist.hashicorp.com/v1/object/630e42d9-2364-2412-4121-18266770468e
 
-When the upload finishes, you can verify it worked by making this request and matching the `hosted_token` it returns to the previously retrieved upload token.
+当上传完成后，您可以通过发出这个请求并匹配“hosted_token”返回到先前检索到的上传令牌来进行验证。
 
     $ curl 'https://vagrantcloud.com/api/v1/box/USERNAME/BOX_NAME/version/VERSION_NUMBER/provider/PROVIDER_NAME?access_token=ACCESS_TOKEN'
 
-Your box should then be available for download.
+你的盒子应该已经可以下载了。

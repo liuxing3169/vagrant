@@ -1,6 +1,6 @@
 ---
 layout: "docs"
-page_title: "Creating a Base Box"
+page_title: "创建一个基础盒子"
 sidebar_current: "boxes-base"
 description: |-
   There are a special category of boxes known as "base boxes." These boxes
@@ -9,30 +9,22 @@ description: |-
   in the "base box").
 ---
 
-# Creating a Base Box
+# 创建一个基础盒子
 
-There are a special category of boxes known as "base boxes." These boxes
-contain the bare minimum required for Vagrant to function, are generally
-not made by repackaging an existing Vagrant environment (hence the "base"
-in the "base box").
+这里有一种特殊的盒子，被称之为"基础盒子"。这些盒子包含Vagrant运行所需最基本的需求，
+这些盒子包含Vagrant运行所需的最低需求，通常不是通过重新打包现有的Vagrant环境来制作的。（因此是“基础盒子”中的“基础”）
 
-For example, the Ubuntu boxes provided by the Vagrant project (such as
-"precise64") are base boxes. They were created from a minimal Ubuntu install
-from an ISO, rather than repackaging an existing environment.
+例如，Vagrant项目(如"precise64")提供的Ubuntu盒子是基础盒子。它们是从ISO文件安装得来的最小体量的Ubuntu,而非从一个已经存在的环境重新打包得到。
 
-Base boxes are extremely useful for having a clean slate starting point from
-which to build future development environments. The Vagrant project hopes
-in the future to be able to provide base boxes for many more operating systems.
-Until then, this page documents how you can create your own base box.
+基础盒子对于建立一个清白的起点非常有用，从而构建将来的开发环境。Vagrant项目希望将来能够提供更多操作系统的基础盒子。
+那时之前，这个页面会向你说明如何创建你自己的基础盒子。
 
 <div class="alert alert-warning">
-  <strong>Advanced topic!</strong> Creating a base box can be a time consuming
-  and tedious process, and is not recommended for new Vagrant users. If you are
-  just getting started with Vagrant, we recommend trying to find existing
-  base boxes to use first.
+  <strong>高级主题!</strong> 创建一个基础盒子是一个耗时并乏味的过程，不建议新的Vagrant用户做此事。
+  如果你只是开始使用Vagrant，我们建议你试试去找一个已经存在的基础盒子先用着。
 </div>
 
-## What's in a Base Box?
+## 基础盒子里面有什么?
 
 A base box typically consists of only a bare minimum set of software
 for Vagrant to function. As an example, a Linux box may contain only the
@@ -48,7 +40,7 @@ additional software. For example, if you are making a base box for VirtualBox,
 you will want to include the VirtualBox guest additions so that shared folders
 work properly. But if you are making an AWS base box, this is not required.
 
-## Creating a Base Box
+## 创建一个基础盒子
 
 Creating a base box is actually provider-specific. This means that depending
 on if you are using VirtualBox, VMware, AWS, etc. the process for creating
@@ -66,7 +58,7 @@ Provider-specific guides for creating base boxes are linked below:
 * [VMware Base Boxes](/docs/vmware/boxes.html)
 * [VirtualBox Base Boxes](/docs/virtualbox/boxes.html)
 
-### Packer and Vagrant Cloud
+### Packer 和 Vagrant Cloud
 
 We strongly recommend using [Packer](https://www.packer.io) to create reproducible
 builds for your base boxes, as well as automating the builds with
@@ -74,7 +66,7 @@ builds for your base boxes, as well as automating the builds with
 [Creating Vagrant Boxes with Packer](https://atlas.hashicorp.com/help/packer/artifacts/creating-vagrant-boxes)
 in the Atlas documentation.
 
-### Disk Space
+### 磁盘空间
 
 When creating a base box, make sure the user will have enough disk space
 to do interesting things, without being annoying. For example, in VirtualBox,
@@ -88,7 +80,7 @@ terabytes of EBS storage, for example, since the user can do that on their
 own. But you should default to mounting ephemeral drives, because they're
 free and provide a lot of disk space.
 
-### Memory
+### 内存
 
 Like disk space, finding the right balance of the default amount of memory
 is important. For most providers, the user can modify the memory with
@@ -98,13 +90,13 @@ instantly required many gigabytes of RAM. Instead, choose a value such
 as 512MB, which is usually enough to play around and do interesting things
 with a Vagrant machine, but can easily be increased when needed.
 
-### Peripherals (Audio, USB, etc.)
+### 外围设备 (Audio, USB, etc.)
 
 Disable any non-necessary hardware in a base box such as audio and USB
 controllers. These are generally unnecessary for Vagrant usage and, again,
 can be easily added via the Vagrantfile in most cases.
 
-## Default User Settings
+## 默认用户设置
 
 Just about every aspect of Vagrant can be modified. However, Vagrant does
 expect some defaults which will cause your base box to "just work" out
@@ -115,7 +107,7 @@ If you are creating a base box for private use, you should try _not_ to
 follow these, as they open up your base box to security risks (known
 users, passwords, private keys, etc.).
 
-### "vagrant" User
+### "vagrant" 用户
 
 By default, Vagrant expects a "vagrant" user to SSH into the machine as.
 This user should be setup with the
@@ -176,7 +168,7 @@ in the SSH server configuration.
 This avoids a reverse DNS lookup on the connecting SSH client which
 can take many seconds.
 
-## Windows Boxes
+## Windows 盒子
 
 Supported Windows guest operating systems:
 - Windows 7

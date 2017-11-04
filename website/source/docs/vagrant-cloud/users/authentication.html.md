@@ -1,56 +1,44 @@
 ---
 layout: "docs"
-page_title: "Authentication"
+page_title: "身份认证"
 sidebar_current: "vagrant-cloud-users-authentication"
 ---
 
-# Authentication
+# 身份认证
 
-Vagrant Cloud requires a username and password to sign up and login.
-However, there are several ways to authenticate with your account.
+Vagrant云需要一个用户名和密码注册和登录。然而，这里还是有几种方法可以对你的账号进行身份认证。
 
-### Authentication Tokens
+### 身份认证票据(Tokens)
 
-Authentication tokens are keys used to access your account via tools or over the
-various APIs used in Vagrant Cloud.
+身份认证票据(Tokens)是用于通过工具或通过Vagrant Cloud中使用的各种API访问您的帐户的密钥。
 
-You can create new tokens in the token section of your account settings. It's
-important to keep tokens secure, as they are essentially a password and can be
-used to access your account or resources. Additionally, token authentication
-bypasses two factor authentication.
+你可以在你的账号设置区域创建新的票据(tokens)。保护票据的安全是非常重要的，因为它们本质上是密码，并可以被用于访问你的账号和其他资源。
+此外，票据认证会绕过双重身份认证。
 
-### Authenticating Tools
+### 身份认证工具
 
-All HashiCorp tools look for the `ATLAS_TOKEN` environment variable:
+所有的HashiCorp工具都会去寻找环境变量`ATLAS_TOKEN`：
 
 ```shell
 $ export ATLAS_TOKEN=TOKEN
 ```
 
-This will automatically authenticate all requests against this token. This is
-the recommended way to authenticate with our various tools. Care should be given
-to how this token is stored, as it is as good as a password.
+这将会通过这个票据对所有请求自动进行身份认证。这是使用我们各种工具时推荐的身份认证方式。
+应该注意这个令牌是如何存储的，因为它和密码一样。
 
-### Two Factor Authentication
+### 双重身份认证
 
-You can optionally enable Two Factor authentication, requiring an SMS or TOTP
-one-time code every time you log in, after entering your username and password.
+您可以选择启用双重身份验证，每次登录时输入用户名和密码后，都需要短信或TOTP一次性代码。
 
-You can enable Two Factor authentication in the security section of your account
-settings.
+你可以在你账号设定的安全区域开启双重身份认证功能。
 
-Be sure to save the generated recovery codes. Each backup code can be used once
-to sign in if you do not have access to your two-factor authentication device.
+请务必保存生成的恢复代码。如果您无权访问双重身份验证设备，则每个备份代码都可以使用一次登录。
 
-### Sudo Mode
+### Sudo模式
 
-When accessing certain admin-level pages (adjusting your user profile, for
-example), you may notice that you're prompted for your password, even though
-you're already logged in. This is by design, and aims to help guard protect you
-if your screen is unlocked and unattended.
+当访问某一管理基本的页面(例如：调整你的用户信息)，你可能会注意到你被提示输入你的密码，即使你已经登录了。
+这是设计使然，目的是帮助守护账号安全，如果你的屏幕没有锁定或者无人照看。
 
-### Session Management
+### 会话管理
 
-You can see a list of your active sessions on your security settings page. From
-here, you can revoke sessions, in case you have lost access to a machine from
-which you were accessing.
+你可以在你的安全设置页面看到你的有效回话列表。在这里，你可以废除会话，以防止你无法访问你正在访问的计算机。

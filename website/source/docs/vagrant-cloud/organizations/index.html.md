@@ -1,14 +1,12 @@
 ---
 layout: "docs"
-page_page_title: "Organizations in Vagrant Cloud"
+page_page_title: "Vagrant云中的组织机构"
 sidebar_current: "vagrant-cloud-organizations"
 ---
 
-## Organizations in Vagrant Cloud
+## Vagrant云中的组织机构
 
-Organizations are a group of users in Vagrant Cloud that have access and
-ownership over shared resources. When operating within a team, we recommend
-creating an organization to manage access control, auditing, billing and
-authorization.
+Vagrant云中的组织机构是一组用户，他们有对分享的资源拥有访问权限和拥有权。当在一个团队内进行操作时，我们建议创建一个组织以管理访问控制，
+审计，账单和授权。
 
-Each individual member of your organization should have their own account.
+组织中的每个单独会员应该都有他们自己的账号。

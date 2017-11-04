@@ -1,21 +1,17 @@
 ---
 layout: "docs"
-page_title: "Finding and Using Boxes"
+page_title: "查找和使用盒子"
 sidebar_current: "vagrant-cloud-boxes-using"
 ---
 
-# Finding and Using Boxes
+# 查找和使用盒子
 
-A primary use case of Vagrant Cloud by HashiCorp is to be able to easily find
-boxes you can use with Vagrant that contain the technologies you need
-for a Vagrant environment. We've made it extremely easy to do that:
+HashiCorp的Vagrant Cloud的一个主要用例是能够轻松地找到可用于Vagrant的包含Vagrant环境所需技术的盒子。
+我们让这件事变的相当的简单：
 
-1. Go to the [Discover page](https://vagrantcloud.com/discover), and search for
-   any box you want.
+1. 去到[发现页面](https://vagrantcloud.com/discover),并搜索你想要的任何盒子。
 
-1. Once you find a box, click its name to learn more about it.
+1. 一旦你找到了一个盒子，点击它的名字并了解它的更多信息。
 
-1. When you're ready to use it, copy the name, such as "hashicorp/precise64"
-   and initialize your Vagrant project with `vagrant init hashicorp/precise64`.
-   Or, if you already have a Vagrant project created, modify the Vagrantfile
-   to use the box: `config.vm.box = "hashicorp/precise64"`
+1. 当你准备使用它时，复制它的名字，如"hashicorp/precise64"并通过`vagrant init hashicorp/precise64`初始化你的Vagrant项目。
+或者，如果你已经有一个创建好的Vagrant项目，修改Vagrantfile以使用此盒子：`config.vm.box = "hashicorp/precise64"`
